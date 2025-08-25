@@ -55,6 +55,10 @@ const chatData = [
   {
     keywords: ["stagiaire", "intern", "étudiant", "stage"],
     answer: "Le système permet de gérer tous les aspects des stagiaires :\n• Informations personnelles\n• Détails du stage\n• Suivi des dates\n• Génération d'attestations\nQue voulez-vous savoir spécifiquement ?"
+  },
+  {
+    keywords:["les horaires","temps","heure de travail"],
+    answer:"les horaires sont de 9h à 16h , du lundi au vendredi"
   }
 ];
 
