@@ -2,12 +2,27 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const path = require("path");
+const fs = require('fs');
 
 const app = express();
+const chatRouter = require('./chatbot');
+
 
 // Middleware
 app.use(cors());
 app.use(express.json()); // Parse JSON
+app.use('/', chatRouter);
+
+// Create pdfs directory if it doesn't exist
+const pdfsDir = path.join(__dirname, 'pdfs');
+if (!fs.existsSync(pdfsDir)) {
+  fs.mkdirSync(pdfsDir, { recursive: true });
+  console.log('📁 Created pdfs directory');
+}
+
+// Serve static PDF files from pdfs directory
+app.use("/pdfs", express.static(pdfsDir));
 
 // Connect to MySQL
 const db = mysql.createConnection({
@@ -56,9 +71,7 @@ app.post('/api/ajouter-stagiaire', (req, res) => {
 
 // --- GET ALL STAGIAIRES (with optional search) ---
 app.get('/api/stagiaires', (req, res) => {
-  console.log('📋 Getting all stagiaires...');
   const searchTerm = req.query.search;
-
   if (searchTerm && searchTerm.trim() !== '') {
     const term = `%${searchTerm.trim()}%`;
     const sql = `
@@ -68,11 +81,7 @@ app.get('/api/stagiaires', (req, res) => {
       ORDER BY nom ASC
     `;
     db.query(sql, [term, term, term, term, term, term], (err, results) => {
-      if (err) {
-        console.error('❌ Search error:', err);
-        return res.status(500).json({ success: false, message: "Erreur de recherche", error: err.message });
-      }
-      console.log(`✅ Found ${results.length} stagiaires matching "${searchTerm}"`);
+      if (err) return res.status(500).json({ success: false, message: "Erreur de recherche", error: err.message });
       res.json({ success: true, data: results, count: results.length, searchTerm });
     });
   } else {
@@ -82,11 +91,7 @@ app.get('/api/stagiaires', (req, res) => {
       ORDER BY nom ASC
     `;
     db.query(sql, (err, results) => {
-      if (err) {
-        console.error('❌ Database error:', err);
-        return res.status(500).json({ success: false, message: "Erreur de base de données", error: err.message });
-      }
-      console.log(`✅ Retrieved ${results.length} stagiaires`);
+      if (err) return res.status(500).json({ success: false, message: "Erreur de base de données", error: err.message });
       res.json({ success: true, data: results, count: results.length });
     });
   }
@@ -113,12 +118,20 @@ app.put('/api/stagiaires/:id', (req, res) => {
     WHERE id = ?
   `;
   db.query(sql, [cin, nom, prenom, email, telephone, institut, specialite, dateDebut, dateFin, objetStage, id], (err, result) => {
-    if (err) {
-      console.error('❌ Error updating stagiaire:', err);
-      return res.status(500).json({ success: false, message: "Erreur lors de la modification du stagiaire" });
-    }
+    if (err) return res.status(500).json({ success: false, message: "Erreur lors de la modification du stagiaire" });
     if (result.affectedRows === 0) return res.status(404).json({ success: false, message: "Stagiaire non trouvé" });
     res.json({ success: true, message: "Stagiaire modifié avec succès !" });
+  });
+});
+
+// --- DELETE STAGIAIRE ---
+app.delete('/api/stagiaires/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = 'DELETE FROM stagiaires WHERE id = ?';
+  db.query(sql, [id], (err, result) => {
+    if (err) return res.status(500).json({ success: false, message: "Erreur lors de la suppression" });
+    if (result.affectedRows === 0) return res.status(404).json({ success: false, message: "Stagiaire non trouvé" });
+    res.json({ success: true, message: "Stagiaire supprimé avec succès !" });
   });
 });
 
@@ -140,8 +153,24 @@ app.get('/api/stagiaires/search', (req, res) => {
   });
 });
 
+// --- GET STAGIAIRE DATA FOR FRONTEND PDF ---
+app.get('/api/attestation/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = 'SELECT * FROM stagiaires WHERE id = ?';
+  db.query(sql, [id], (err, results) => {
+    if (err) return res.status(500).json({ success: false, message: 'Database error' });
+    if (results.length === 0) return res.status(404).json({ success: false, message: 'Stagiaire non trouvé' });
+
+    const stagiaire = results[0];
+
+    // Only send stagiaire data, frontend handles PDF generation
+    res.json({ success: true, data: stagiaire });
+  });
+});
+
 // --- START SERVER ---
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Backend running on http://localhost:${PORT}`);
+  console.log(`📁 PDFs will be accessible at http://localhost:${PORT}/pdfs/`);
 });
