@@ -35,6 +35,41 @@ db.connect(err => {
   console.log('✅ MySQL Connected');
 });
 
+
+/* -------------------- SIGN UP (plain-text) -------------------- */
+app.post('/api/register', (req, res) => {
+  const { nom, prenom, email, password } = req.body || {};
+
+  if (!nom || !prenom || !email || !password) {
+    return res.status(400).json({ success: false, message: 'Champs manquants' });
+  }
+
+  // Vérifie si l'email existe déjà
+  const checkSql = 'SELECT id FROM utilisateurs WHERE email = ? LIMIT 1';
+  db.query(checkSql, [email], (checkErr, rows) => {
+    if (checkErr) {
+      console.error('❌ DB error (check email):', checkErr);
+      return res.status(500).json({ success: false, message: 'Erreur base de données' });
+    }
+    if (rows.length > 0) {
+      return res.json({ success: false, message: 'Email déjà utilisé' });
+    }
+
+    // Insère le nouvel utilisateur
+    const insertSql = `
+      INSERT INTO utilisateurs (nom, prenom, email, password, created_at)
+      VALUES (?, ?, ?, ?, NOW())
+    `;
+    db.query(insertSql, [nom, prenom, email, password], (insErr) => {
+      if (insErr) {
+        console.error('❌ DB error (insert user):', insErr);
+        return res.status(500).json({ success: false, message: 'Erreur lors de la création du compte' });
+      }
+      return res.json({ success: true });
+    });
+  });
+});
+
 // Make db available globally for chatbot
 global.db = db;
 

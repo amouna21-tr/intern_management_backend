@@ -1,0 +1,61 @@
+cin,nom,prenom,email,telephone,institut,specialite,date_debut,date_fin,duree_jours,objet_stage,bon_stagiaire
+10000001,Ayari,Meriem,meriem.ayari@example.com,27624039,ISET,Informatique,2025-06-03,2025-08-24,82,Automatisation,1
+10000002,Haddad,Houssem,houssem.haddad@example.com,21973060,ISG,Data Science,2025-06-02,2025-07-07,35,Maintenance,0
+10000003,Baccar,Omar,omar.baccar@example.com,25037655,INSAT,Industriel,2025-06-14,2025-07-17,33,Automatisation,0
+10000004,Haddad,Ali,ali.haddad@example.com,22037872,ISG,Industriel,2025-06-13,2025-07-16,33,Analyse donnees,0
+10000005,BenAli,Skander,skander.benali@example.com,23234302,ENIS,Electrique,2025-06-05,2025-08-08,64,Dev web,1
+10000006,Khaldi,Farah,farah.khaldi@example.com,24032085,INSAT,Industriel,2025-06-19,2025-08-28,70,Analyse donnees,1
+10000007,Ayari,Omar,omar.ayari@example.com,22053424,ISG,Informatique,2025-06-20,2025-08-02,43,Maintenance,0
+10000008,Gharbi,Amine,amine.gharbi@example.com,26270514,FST,Industriel,2025-06-30,2025-08-28,59,Reseaux,0
+10000009,Sassi,Ali,ali.sassi@example.com,24015985,ISET,Data Science,2025-06-03,2025-08-08,66,Reseaux,1
+10000010,Gharbi,Nour,nour.gharbi@example.com,26762565,ISET,Electrique,2025-06-10,2025-08-17,68,Dev web,1
+10000011,Haddad,Skander,skander.haddad@example.com,28014936,ENIT,Reseaux,2025-06-05,2025-09-02,89,Maintenance,1
+10000012,Baccar,Sana,sana.baccar@example.com,22302255,ISG,Industriel,2025-06-26,2025-09-20,86,Reseaux,0
+10000013,Ayari,Houssem,houssem.ayari@example.com,29332820,ISG,Electrique,2025-06-03,2025-08-25,83,Dev web,1
+10000014,Sassi,Nour,nour.sassi@example.com,22090518,INSAT,Mecanique,2025-06-23,2025-08-11,49,BI/Reporting,1
+10000015,Khaldi,Nour,nour.khaldi@example.com,25774720,ISET,Electrique,2025-06-29,2025-09-09,72,Reseaux,0
+10000016,BenAli,Nour,nour.benali@example.com,26963698,ENIT,Industriel,2025-06-04,2025-08-04,61,Dev web,1
+10000017,Mansour,Farah,farah.mansour@example.com,23169968,ISET,Data Science,2025-06-13,2025-08-07,55,Maintenance,0
+10000018,Haddad,Meriem,meriem.haddad@example.com,28536114,FST,Industriel,2025-06-09,2025-09-03,86,Analyse donnees,1
+10000019,Baccar,Skander,skander.baccar@example.com,25671130,ISET,Electrique,2025-06-12,2025-08-24,73,Maintenance,0
+10000020,Mansour,Meriem,meriem.mansour@example.com,22392252,ENIT,Data Science,2025-06-08,2025-08-19,72,Analyse donnees,1
+10000021,BenAli,Nour,nour.benali@example.com,24059205,ENIS,Reseaux,2025-06-01,2025-07-10,39,Maintenance,0
+10000022,Gharbi,Houssem,houssem.gharbi@example.com,26345416,ENIT,Mecanique,2025-06-28,2025-08-29,62,Automatisation,1
+10000023,BenAli,Nour,nour.benali@example.com,27583025,FST,Electrique,2025-06-13,2025-07-19,36,Maintenance,0
+10000024,Baccar,Sana,sana.baccar@example.com,24197897,INSAT,Data Science,2025-06-15,2025-07-25,40,Dev web,1
+10000025,Ayari,Sonia,sonia.ayari@example.com,21882072,INSAT,Informatique,2025-06-19,2025-07-28,39,Automatisation,1
+10000026,Haddad,Houssem,houssem.haddad@example.com,21427833,INSAT,Data Science,2025-06-20,2025-08-13,54,Analyse donnees,1
+10000027,Sassi,Houssem,houssem.sassi@example.com,27109648,FST,Informatique,2025-06-04,2025-08-27,84,Maintenance,1
+10000028,Mzoughi,Nour,nour.mzoughi@example.com,29117398,ENIS,Informatique,2025-06-05,2025-07-11,36,BI/Reporting,1
+10000029,Ayari,Farah,farah.ayari@example.com,29029943,ISET,Data Science,2025-06-17,2025-07-18,31,Analyse donnees,1
+10000030,Gharbi,Houssem,houssem.gharbi@example.com,23459582,ISET,Industriel,2025-06-30,2025-07-31,31,Automatisation,0
+10000031,Sassi,Omar,omar.sassi@example.com,25380786,ISG,Reseaux,2025-06-30,2025-08-09,40,Reseaux,0
+10000032,Mansour,Skander,skander.mansour@example.com,29433856,ENIS,Mecanique,2025-06-08,2025-08-16,69,Analyse donnees,1
+10000033,Mansour,Amine,amine.mansour@example.com,24804057,ENIT,Industriel,2025-06-16,2025-08-07,52,BI/Reporting,1
+10000034,BenAli,Sana,sana.benali@example.com,25687865,FST,Reseaux,2025-06-07,2025-08-20,74,Automatisation,0
+10000035,Ayari,Nour,nour.ayari@example.com,26863966,ENIS,Informatique,2025-06-08,2025-07-14,36,Analyse donnees,1
+10000036,Mzoughi,Ali,ali.mzoughi@example.com,26666294,ENIT,Electrique,2025-06-20,2025-09-15,87,Automatisation,1
+10000037,BenAli,Nour,nour.benali@example.com,26771478,ISET,Informatique,2025-06-27,2025-09-07,72,Dev web,1
+10000038,Baccar,Ali,ali.baccar@example.com,29020058,ENIT,Electrique,2025-06-26,2025-09-04,70,Reseaux,1
+10000039,Haddad,Amine,amine.haddad@example.com,28770544,FST,Mecanique,2025-07-01,2025-08-05,35,BI/Reporting,0
+10000040,Trabelsi,Meriem,meriem.trabelsi@example.com,23131350,INSAT,Data Science,2025-06-19,2025-09-14,87,Maintenance,1
+10000041,Trabelsi,Sonia,sonia.trabelsi@example.com,28958388,ISET,Reseaux,2025-06-05,2025-08-09,65,Automatisation,0
+10000042,Trabelsi,Sana,sana.trabelsi@example.com,21238956,ISET,Mecanique,2025-06-04,2025-08-06,63,BI/Reporting,1
+10000043,Trabelsi,Amine,amine.trabelsi@example.com,24268292,ENIT,Informatique,2025-06-09,2025-07-22,43,Reseaux,1
+10000044,Gharbi,Ali,ali.gharbi@example.com,26469193,ENIS,Industriel,2025-06-14,2025-09-05,83,Analyse donnees,1
+10000045,BenAli,Houssem,houssem.benali@example.com,28686665,ISET,Industriel,2025-06-27,2025-09-22,87,Automatisation,0
+10000046,Baccar,Skander,skander.baccar@example.com,23193843,ISG,Data Science,2025-06-17,2025-08-18,62,Dev web,1
+10000047,Mzoughi,Meriem,meriem.mzoughi@example.com,21065976,ENIT,Data Science,2025-06-05,2025-08-04,60,Automatisation,1
+10000048,Haddad,Skander,skander.haddad@example.com,22036081,ENIS,Mecanique,2025-06-17,2025-08-19,63,Automatisation,0
+10000049,Mzoughi,Omar,omar.mzoughi@example.com,21953324,ENIT,Data Science,2025-06-09,2025-07-11,32,Dev web,1
+10000050,Gharbi,Nour,nour.gharbi@example.com,21467509,INSAT,Electrique,2025-06-11,2025-08-19,69,Automatisation,1
+10000051,Khaldi,Skander,skander.khaldi@example.com,24345430,ISET,Reseaux,2025-06-15,2025-08-16,62,Automatisation,0
+10000052,Mzoughi,Skander,skander.mzoughi@example.com,25154974,ISET,Industriel,2025-06-29,2025-09-23,86,Reseaux,0
+10000053,Gharbi,Ali,ali.gharbi@example.com,28508277,ENIT,Electrique,2025-06-04,2025-07-29,55,Maintenance,0
+10000054,Ayari,Omar,omar.ayari@example.com,25037248,FST,Informatique,2025-06-07,2025-08-18,72,Reseaux,1
+10000055,Haddad,Meriem,meriem.haddad@example.com,27143536,ENIT,Reseaux,2025-06-29,2025-08-06,38,Maintenance,0
+10000056,Mansour,Omar,omar.mansour@example.com,27681641,FST,Data Science,2025-06-22,2025-09-13,83,Analyse donnees,1
+10000057,Trabelsi,Amine,amine.trabelsi@example.com,29650417,FST,Reseaux,2025-06-14,2025-07-26,42,Reseaux,0
+10000058,Ayari,Omar,omar.ayari@example.com,27139664,INSAT,Reseaux,2025-06-18,2025-08-16,59,Maintenance,0
+10000059,BenAli,Amine,amine.benali@example.com,26561611,ISG,Industriel,2025-06-10,2025-08-11,62,Dev web,1
+10000060,Haddad,Ali,ali.haddad@example.com,22757909,INSAT,Reseaux,2025-06-09,2025-07-11,32,Analyse donnees,1
